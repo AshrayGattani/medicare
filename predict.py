@@ -430,8 +430,8 @@ def show_prediction():
     )
     
 
-    DRG  = st.selectbox("Country",DRG)
-    Hosp_Region = st.selectbox("Education level",Hosp_Region)
+    DRG  = st.selectbox("DRG",DRG)
+    Hosp_Region = st.selectbox("Hospital Region",Hosp_Region)
 
 
     ok = st.button("Calculate")
@@ -442,5 +442,5 @@ def show_prediction():
         X[:,1]= le_hosp.transform(X[:,1])
 
         salary = regressor_loaded.predict(X)
-        st.subheader(f"Estimated {salary[0]}")
+        st.subheader(f"Estimated : {salary[0]}")
     
